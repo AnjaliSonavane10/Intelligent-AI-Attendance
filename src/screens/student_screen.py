@@ -5,6 +5,8 @@ from src.components.header import header_dashboard
 from src.components.footer import footer_dashboard
 
 from src.database.db import check_teacher_exists,create_teacher,teacher_login
+from PIL import Image
+import numpy as np
 
 def student_screen():
     style_base_dashboard()
@@ -18,14 +20,14 @@ def student_screen():
             st.session_state['login_type']=None
             st.rerun()
         
-    st.header("Login using password",text_alignment='center')
-    st.space()
-    st.space()
-
     st.header("Login using FaceID",text_alignment='center')
+    st.space()
 
+    photo_source=st.camera_input("Position your camera in centre")
 
-    st.camera_input("Position your camera in centre")
+    if photo_source: 
+        np.array(Image.open(photo_source))
+
     footer_dashboard()
     
 
