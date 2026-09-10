@@ -32,12 +32,7 @@ def style_base_dashboard():
         <style>
 
         .stApp {
-            background: linear-gradient(
-            135deg,
-            #E6FFFA 0%,
-            #E0F2FE 50%,
-            #ECFDF5 100%
-        );
+            background:#E0E3FF !important;
         }
 
         </style>
