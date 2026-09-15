@@ -28,7 +28,7 @@ def get_face_embeddings(image_np):
     encoding=[]
 
     for face in faces:
-        shape=sp[image_np,face]
+        shape = sp(image_np, face)
         face_descriptor=facerec.compute_face_descriptor(image_np,shape,1)
 
         encoding.append(np.array(face_descriptor))
@@ -60,7 +60,7 @@ def get_trained_model():
     except ValueError:
         pass
 
-    return {'clf':clf,'X':x,'y':y}
+    return {'clf':clf,'X':X,'y':y}
 
 def train_classifer():
     st.cache_resource.clear()
@@ -97,4 +97,4 @@ def predict_attendance(class_image_np):
 
         if best_match_score<= resemblance_threshold:
             detected_student[predicted_id]=True
-    return detected_student,all_students,len(encoding)
+    return detected_student,all_students,len(encodings)
