@@ -95,7 +95,7 @@ def style_base_layout():
             transition: transform 0.25s ease-in-out !important;
         }
 
-        button[kind="Tertiary"]{
+        button[kind="tertiary"]{
                     border-radius:1.5rem !important;
                     background: #EA580C !important;
                     color: #FFFFFF !important;
